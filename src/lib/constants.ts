@@ -1,9 +1,9 @@
 export const COMPANY = {
   name: "Techron Solutions",
-  tagline: "Modern websites + reliable software support for local businesses.",
-  email: "you@yourdomain.com", // TODO
-  phoneDisplay: "(123) 456-7890", // TODO
-  phoneE164: "+11234567890", // TODO
-  location: "Medicine Hat, AB", // TODO
+  tagline: "Software solutions and support made easy for local businesses.",
+  email: "techronsolution@gmail.com",
+  phoneDisplay: "(403) 866-2438",
+  phoneE164: "+4038662438",
+  location: "Medicine Hat, AB",
   logoSrc: "/logo2.png", // put logo2.png in /public for this path
 };

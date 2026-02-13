@@ -109,10 +109,16 @@ a:focus{ outline: 3px solid var(--ring); outline-offset: 2px; border-radius: 8px
   align-items: center;
   gap: 16px;
 }
-.nav a{
+.nav a:not(.btn){
   color: var(--text);
   text-decoration: none;
   opacity: .92;
+  padding: 1px 10px;          /* controls size of click + focus box */
+  border-radius: 8px;
+}
+.nav a:not(.btn):focus-visible {
+  outline: 2px solid #4f9cff;
+  outline-offset: 3px;   /* makes the box look bigger */
 }
 .nav a:hover{ opacity: 1; }
 
