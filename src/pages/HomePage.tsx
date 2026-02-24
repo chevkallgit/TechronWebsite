@@ -8,13 +8,7 @@ type FormState = {
   website?: string; // honeypot
 };
 
-function buildMailto({ name, email, message }: FormState) {
-  const subject = encodeURIComponent("Project Inquiry");
-  const body = encodeURIComponent(
-    `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}\n`
-  );
-  return `mailto:${COMPANY.email}?subject=${subject}&body=${body}`;
-}
+const WEB3FORMS_KEY = "cb704a9f-04ef-4258-9c39-f3a9d1b05f99"; // get free key at web3forms.com
 
 export default function HomePage() {
   const [form, setForm] = useState<FormState>({
@@ -37,7 +31,7 @@ export default function HomePage() {
       setForm((p) => ({ ...p, [key]: e.target.value }));
     };
 
-  const onSubmit = (e: React.FormEvent) => {
+  const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     // Honeypot – bots often fill this
@@ -53,13 +47,28 @@ export default function HomePage() {
 
     setStatus({ type: "sending" });
 
-    // Simple no-backend approach
-    window.location.href = buildMailto(form);
-
-    setStatus({
-      type: "success",
-      msg: "Your email app should open. If it didn’t, please email us directly.",
-    });
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_KEY,
+          name: form.name,
+          email: form.email,
+          message: form.message,
+          subject: "New inquiry from TechronSite",
+        }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        setStatus({ type: "success", msg: "Message sent! We’ll get back to you within 1 business day." });
+        setForm({ name: "", email: "", message: "", website: "" });
+      } else {
+        setStatus({ type: "error", msg: "Something went wrong. Please email us directly." });
+      }
+    } catch {
+      setStatus({ type: "error", msg: "Network error. Please email us directly." });
+    }
   };
 
   return (
@@ -187,8 +196,7 @@ export default function HomePage() {
             </button>
 
             <p className="form-note" aria-live="polite">
-              {status.type === "idle" &&
-                "No backend yet — this opens your email app. We can wire it to a form provider later."}
+              {status.type === "idle" && ""}
 
               {(status.type === "success" || status.type === "error") &&
                 status.msg}

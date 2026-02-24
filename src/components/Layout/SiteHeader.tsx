@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { COMPANY } from "../../lib/constants";
 
 export default function SiteHeader() {
@@ -23,9 +23,9 @@ export default function SiteHeader() {
           </NavLink>
           <NavLink to="/services">Services</NavLink>
           <NavLink to="/policies">Policies</NavLink>
-          <a href="#contact" className="btn btn-sm">
+          <Link to="/#contact" className="btn btn-sm">
             Contact
-          </a>
+          </Link>
         </nav>
       </div>
     </header>

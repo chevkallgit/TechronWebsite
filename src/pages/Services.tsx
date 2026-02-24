@@ -34,6 +34,22 @@ const SERVICES = [
       "Ongoing support plans (optional)",
     ],
   },
+  {
+    title: "AI Integration",
+    bullets: [
+      "AI-powered chatbots and virtual assistants",
+      "Safe installation and support for AI tools",
+      "Time savings and efficiency improvements with AI automation",
+    ],
+  },
+  {
+    title: "Tech Consulting",
+    bullets: [
+      "Not sure where to start? We'll figure it out together",
+      "Platform and tool recommendations",
+      "One-time or ongoing advisory",
+    ],
+  }
 ];
 
 export default function ServicesPage() {
