@@ -109,6 +109,30 @@ a:focus{ outline: 3px solid var(--ring); outline-offset: 2px; border-radius: 8px
   align-items: center;
   gap: 16px;
 }
+
+/* Hamburger button — hidden on desktop */
+.nav-toggle{
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+}
+.nav-toggle span{
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: transform .2s ease, opacity .2s ease;
+}
+.nav-toggle[aria-expanded="true"] span:nth-child(1){ transform: translateY(7px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] span:nth-child(2){ opacity: 0; transform: scaleX(0); }
+.nav-toggle[aria-expanded="true"] span:nth-child(3){ transform: translateY(-7px) rotate(-45deg); }
 .nav a:not(.btn){
   color: var(--text);
   text-decoration: none;
@@ -349,9 +373,25 @@ input:focus, textarea:focus{ outline: 3px solid var(--ring); outline-offset: 1px
   .contact{ grid-template-columns: 1fr; }
 }
 
+@media (max-width: 700px){
+  .nav-inner{ flex-wrap: wrap; }
+  .nav-toggle{ display: flex; }
+  .nav nav{
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+    padding: 8px 0 16px;
+    border-top: 1px solid var(--border);
+  }
+  .nav nav.open{ display: flex; }
+  .nav a:not(.btn){ padding: 10px 12px; }
+  .nav .btn{ width: 100%; justify-content: center; margin-top: 4px; }
+}
+
 @media (max-width: 560px){
   .hero-copy .hero-cta{ flex-direction: column; align-items: stretch; }
-  .nav nav{ gap: 10px; }
 }
 
 .about-inline{
