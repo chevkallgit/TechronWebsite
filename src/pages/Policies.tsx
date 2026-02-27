@@ -1,9 +1,17 @@
 
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 export default function PoliciesPage() {
   return (
     <>
+      <Helmet>
+        <title>Policies & Guarantees — Techron Solutions</title>
+        <meta name="description" content="Techron Solutions' commitments, privacy approach, and terms. Clear expectations, no surprises." />
+        <meta property="og:title" content="Policies & Guarantees — Techron Solutions" />
+        <meta property="og:url" content="https://techronsolutions.ca/policies" />
+        <meta property="og:description" content="Clear expectations. No surprises. Our commitments, privacy approach, and basic terms." />
+      </Helmet>
       <section className="section">
         <div className="container">
           <h1>Policies & Guarantees</h1>

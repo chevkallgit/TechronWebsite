@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { COMPANY } from "../lib/constants.ts";
 
 type FormState = {
@@ -73,6 +74,13 @@ export default function HomePage() {
 
   return (
     <>
+      <Helmet>
+        <title>Techron Solutions — Web & Tech Support in Medicine Hat, AB</title>
+        <meta name="description" content="Techron Solutions helps small businesses in Medicine Hat with website design, performance fixes, and practical tech support. Fast turnaround, clear pricing." />
+        <meta property="og:url" content="https://techronsolutions.ca/" />
+        <meta property="og:title" content="Techron Solutions — Web & Tech Support in Medicine Hat, AB" />
+        <meta property="og:description" content="Modern websites and software support for real businesses. Based in Medicine Hat, AB." />
+      </Helmet>
       {/* HERO = headline + about merged */}
       <section className="hero" aria-label="Hero">
         <div className="container hero-inner">
