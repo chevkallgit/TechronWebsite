@@ -10,10 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "next-sitemap": "^4.2.3",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
-    "react-helmet-async": "^2.0.5",
     "react-router-dom": "^7.13.0"
   },
   "devDependencies": {

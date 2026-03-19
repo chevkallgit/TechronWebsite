@@ -1,6 +1,5 @@
 
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
 
 const SERVICES = [
   {
@@ -56,13 +55,11 @@ const SERVICES = [
 export default function ServicesPage() {
   return (
     <>
-      <Helmet>
-        <title>Services — Techron Solutions</title>
-        <meta name="description" content="Web design, performance fixes, software support, maintenance, AI integration, and tech consulting for small businesses in Medicine Hat, AB." />
-        <meta property="og:title" content="Services — Techron Solutions" />
-        <meta property="og:url" content="https://techronsolutions.ca/services" />
-        <meta property="og:description" content="Web design, performance fixes, software support, maintenance, AI integration, and tech consulting for small businesses." />
-      </Helmet>
+      <title>Services — Techron Solutions</title>
+      <meta name="description" content="Web design, performance fixes, software support, maintenance, AI integration, and tech consulting for small businesses in Medicine Hat, AB." />
+      <meta property="og:title" content="Services — Techron Solutions" />
+      <meta property="og:url" content="https://techronsolutions.ca/services" />
+      <meta property="og:description" content="Web design, performance fixes, software support, maintenance, AI integration, and tech consulting for small businesses." />
       <section className="section">
         <div className="container">
           <h1>Services</h1>
