@@ -205,7 +205,7 @@ a:focus-visible {
 /* ─── Hero ───────────────────────────────────────────────────────────────── */
 .hero {
   position: relative;
-  padding: 80px 0 60px;
+  padding: 80px 0 max(60px, env(safe-area-inset-bottom));
   overflow: hidden;
   min-height: calc(100svh - 72px);
   display: flex;
