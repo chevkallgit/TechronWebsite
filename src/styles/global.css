@@ -118,7 +118,7 @@ a:focus-visible {
 }
 
 /* ─── Container ──────────────────────────────────────────────────────────── */
-.container { width: min(1160px, 92%); margin-inline: auto; }
+.container { width: min(1800px, 96%); margin-inline: auto; }
 
 /* ─── Nav ────────────────────────────────────────────────────────────────── */
 .nav {
@@ -205,9 +205,9 @@ a:focus-visible {
 /* ─── Hero ───────────────────────────────────────────────────────────────── */
 .hero {
   position: relative;
-  padding: 110px 0 90px;
+  padding: 80px 0 60px;
   overflow: hidden;
-  min-height: 92vh;
+  min-height: calc(100svh - 72px);
   display: flex;
   align-items: center;
 }
@@ -215,15 +215,6 @@ a:focus-visible {
 /* Animated background elements */
 .hero-bg { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
 
-.hero-grid {
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(106,166,255,0.055) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(106,166,255,0.055) 1px, transparent 1px);
-  background-size: 64px 64px;
-  mask-image: radial-gradient(ellipse 75% 75% at 50% 50%, black 30%, transparent 100%);
-}
 
 .hero-orb-1 {
   position: absolute;
@@ -272,7 +263,7 @@ a:focus-visible {
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  margin-bottom: 22px;
+  margin-bottom: 36px;
 }
 
 .hero-title {
@@ -281,13 +272,13 @@ a:focus-visible {
   font-weight: 700;
   line-height: 1.05;
   letter-spacing: -0.03em;
-  margin: 0 0 18px;
+  margin: 0 0 32px;
 }
 
 .hero-cta {
   display: flex;
   gap: 12px;
-  margin: 28px 0 26px;
+  margin: 100px 0 36px;
   flex-wrap: wrap;
 }
 
@@ -364,7 +355,7 @@ a:focus-visible {
 
 /* ─── Sections ───────────────────────────────────────────────────────────── */
 .section {
-  padding: 100px 0;
+  padding: 130px 0;
   position: relative;
 }
 .section.alt { background: var(--bg-alt); }
@@ -616,8 +607,13 @@ input:focus, textarea:focus {
 /* ─── Responsive ─────────────────────────────────────────────────────────── */
 @media (max-width: 960px) {
   .hero-inner { grid-template-columns: 1fr; }
-  .hero { min-height: unset; padding: 80px 0 60px; }
+  .hero { min-height: calc(100svh - 72px); padding: 40px 0 32px; }
   .hero-visual { display: none; }
+  .hero-copy { text-align: center; }
+  .hero-eyebrow { margin-left: auto; margin-right: auto; }
+  .hero-cta { justify-content: center; }
+  .trust { justify-content: center; }
+  .lede { margin-left: auto; margin-right: auto; }
   .grid { grid-template-columns: 1fr 1fr; }
   .contact { grid-template-columns: 1fr; gap: 36px; }
   .footer-inner { grid-template-columns: 1fr 1fr; }
@@ -627,7 +623,9 @@ input:focus, textarea:focus {
   .nav-links  { display: none; }
 }
 @media (max-width: 600px) {
+  .container { width: 96%; }
   .grid { grid-template-columns: 1fr; }
+  .hero { padding: 24px 0 20px; }
   .hero-cta { flex-direction: column; align-items: stretch; }
   .footer-inner { grid-template-columns: 1fr; }
   .footer-bottom { flex-direction: column; text-align: center; }

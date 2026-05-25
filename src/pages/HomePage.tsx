@@ -27,7 +27,7 @@ function FloatingPaths({ position }: { position: number }) {
 
   return (
     <div style={{ position: "absolute", inset: 0, pointerEvents: "none" }}>
-      <svg style={{ width: "100%", height: "100%" }} viewBox="0 0 696 316" fill="none">
+      <svg style={{ width: "100%", height: "100%" }} viewBox="0 0 696 316" preserveAspectRatio="none" fill="none">
         {paths.map((path) => (
           <motion.path
             key={path.id}
@@ -235,7 +235,6 @@ export default function HomePage() {
         <div className="hero-bg" aria-hidden="true">
           <FloatingPaths position={1} />
           <FloatingPaths position={-1} />
-          <div className="hero-grid" />
           <motion.div
             className="hero-orb-1"
             animate={{ scale: [1, 1.15, 1], opacity: [0.7, 1, 0.7] }}
